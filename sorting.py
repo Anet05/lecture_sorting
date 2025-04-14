@@ -46,10 +46,26 @@ def selection_sort(number_array, direction="ascending"):
         number_array[i], number_array[min_max_idx] = number_array[min_max_idx], number_array[i]
     return  number_array
 
+def bubble_sort(number_array):
+    """
+    :param list number_array: list with numeric array
+    :return: sorted numeric array
+    """
+    n = len(number_array)
+    for i in range(n - 1):
+        for j in range(i + 1, n - 1):
+            if number_array[i] > number_array[j]:
+                number_array[i], number_array[j] = number_array[j], number_array[i]
+    return number_array
+
+
+# def insertion_sort(number_array):
+
 def main():
     data = read_data("numbers.csv")
     print(data)
     print(selection_sort(data["series_1"]))
+    print(bubble_sort(data["series_2"]))
     pass
 
 
